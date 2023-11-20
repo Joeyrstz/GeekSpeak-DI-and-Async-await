@@ -1,0 +1,20 @@
+@page "/ServicelifetimeDemo"
+@using AspWebApplication.Data
+
+@inject TransientService TransientService
+@inject ScopedService ScopedService
+@inject SingletonService SingletonService
+
+<h3>ServicelifetimeDemo</h3>
+<p>Zähler vom Transient Service: @TransientService.Count</p>
+<button type="button" class="btn btn-primary" @onclick="@TransientService.CountUp">Erhöhen!</button>
+<hr/>
+<p>Zähler vom Scoped Service: @ScopedService.Count</p>
+<button type="button" class="btn btn-primary" @onclick="@ScopedService.CountUp">Erhöhen!</button>
+<hr/>
+<p>Zähler vom Singleton Service: @SingletonService.Count</p>
+<button type="button" class="btn btn-primary" @onclick="@SingletonService.CountUp">Erhöhen!</button>
+
+@code {
+    
+}
